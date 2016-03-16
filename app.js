@@ -31,7 +31,7 @@ router.post('/', function *() {
 	} else {
 		let res = yield weather.get(this.request.body.location, config.API_KEY);
 		let weather_object = weather.distill(res);
-		if (this.request.accepts('json', 'html' == 'json')) {
+		if (this.request.accepts('json', 'html') == 'json') {
 			this.body = yield weather_object;
 		} else {
 			this.body = yield render('weather.mustache', weather_object);
