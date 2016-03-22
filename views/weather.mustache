@@ -7,19 +7,11 @@
 		<script src="./scripts/weather.js"></script>
 	</head>
 	<body>
-		<h1>{{name}}</h1>
+		<h1><span class="temperature">{{temperature}}</span>°<span class="unit">{{unit}}</span></h1>
 		<h2>{{description}}</h2>
 		<ul>
-			<li>
-				Temperature
-				<ul>
-					<li>Current: {{temperature.current}}</li>
-					<li>Minimum: {{temperature.minimum}}</li>
-					<li>Maximum: {{temperature.maximum}}</li>
-				</ul>
-			</li>
-			<li>Humidity: {{humidity}}%</li>
-			<li>Wind speed: {{wind.speed}}km/h</li>
+			<li>{{humidity}}% humidity</li>
+			<li>Wind speed {{wind.speed}}km/h</li>
 			<li>Wind direction: {{wind.direction}} degrees</li>
 		</ul>
 		<form action="/" method="POST">

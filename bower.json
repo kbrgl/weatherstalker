@@ -1,0 +1,24 @@
+{
+  "name": "weatherstalker",
+  "description": "A beautiful, simplistic weather app.",
+  "main": "app.js",
+  "authors": [
+    "Kabir Goel"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "weather"
+  ],
+  "homepage": "https://github.com/kbrgl/weatherstalker",
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
