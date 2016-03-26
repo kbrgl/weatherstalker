@@ -27,7 +27,7 @@ router.post '/', ->
     if not this.request.body.location
         this.status = 400
     else
-        res = yield weather.get(this.request.body.location, config.API_KEY)
+        res = yield weather.get(this.request.body.location, config.API_KEY, 'metric')
         weather_object = weather.distill(res)
         if @request.accepts('json', 'html') == 'json'
             @body = yield weather_object
