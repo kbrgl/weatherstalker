@@ -46,13 +46,7 @@ describe('app.js', () => {
                 .end((err, res) => {
                     if (err) done(err, res);
                     assert.property(res.body, 'temperature');
-                    assert.typeOf(res.body.temperature, 'object');
-                    assert.property(res.body.temperature, 'current');
-                    assert.typeOf(res.body.temperature.current, 'number');
-                    assert.property(res.body.temperature, 'minimum');
-                    assert.typeOf(res.body.temperature.minimum, 'number');
-                    assert.property(res.body.temperature, 'maximum');
-                    assert.typeOf(res.body.temperature.maximum, 'number');
+                    assert.typeOf(res.body.temperature, 'number');
                     assert.property(res.body, 'description');
                     assert.typeOf(res.body.description, 'string');
                     assert.property(res.body, 'humidity');
