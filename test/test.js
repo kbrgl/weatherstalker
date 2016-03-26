@@ -35,7 +35,7 @@ describe('app.js', () => {
                 .post('/')
                 .send({location: 'New Delhi'})
                 .end((err, res) => {
-                    assert.typeOf(res.body, 'object', 'is an object');
+                    assert.typeOf(res.body, 'object');
                     done(err, res);
                 });
         });
@@ -47,29 +47,19 @@ describe('app.js', () => {
                 .end((err, res) => {
                     if (err) done(err, res);
                     assert.property(res.body, 'temperature');
-                    assert.typeOf(res.body.temperature, 'number');
                     assert.property(res.body, 'description');
-                    assert.typeOf(res.body.description, 'string');
                     assert.property(res.body, 'humidity');
-                    assert.typeOf(res.body.humidity, 'number');
                     assert.property(res.body, 'visibility');
-                    assert.typeOf(res.body.visibility, 'number');
                     assert.property(res.body, 'pressure');
-                    assert.typeOf(res.body.pressure, 'number');
                     assert.property(res.body, 'wind');
-                    assert.typeOf(res.body.wind, 'object');
                     assert.property(res.body.wind, 'speed');
-                    assert.typeOf(res.body.wind.speed, 'number');
                     assert.property(res.body.wind, 'direction');
-                    assert.typeOf(res.body.wind.direction, 'number');
                     assert.property(res.body, 'clouds');
-                    assert.typeOf(res.body.clouds, 'number');
                     assert.property(res.body, 'name');
-                    assert.typeOf(res.body.name, 'string');
                     done(err, res);
                 });
         });
     });
 });
 
-// TODO: write tests for test weather.js
+// TODO: write tests for lib/weather.coffee
