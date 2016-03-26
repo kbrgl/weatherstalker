@@ -1,7 +1,8 @@
 'use strict';
+require('coffee-script').register();
 const assert = require('chai').assert;
 const config = require('../config');
-const app = require('../');
+const app = require('../app.coffee');
 const supertest = require('supertest');
 const sinon = require('sinon');
 const weather = require('../lib/weather');
