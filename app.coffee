@@ -8,7 +8,7 @@ bodyParser = require('koa-bodyparser')
 logger = require('koa-logger')
 
 config = require('./config')
-weather = require('./lib/weather')
+weather = require('./lib/weather.coffee')
 
 render = views('views/', {
     map: {
@@ -18,7 +18,7 @@ render = views('views/', {
 
 app.use(serve('public/'))
 app.use(bodyParser())
-app.use(logger())
+app.use(logger()) if config.environment == 'development'
 
 router.get '/', ->
     @body = yield render('index.mustache')
