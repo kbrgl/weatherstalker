@@ -1,4 +1,5 @@
 request = require('request')
+a2d = require('angle-to-direction')
 
 get = (location, appid, units) ->
   new Promise (resolve, reject) ->
@@ -22,7 +23,7 @@ distill = (res) ->
     pressure: res.main.pressure
     wind: {
       speed: res.wind.speed
-      direction: res.wind.deg
+      direction: a2d.degree(res.wind.deg).toLowerCase()
     },
     clouds: res.clouds.all,
     name: res.name
