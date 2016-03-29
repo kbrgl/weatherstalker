@@ -7,7 +7,8 @@
 		<script src="./scripts/weather.js"></script>
 	</head>
 	<body>
-		<p>The temperature at {{name}} is {{temperature}}°{{units}} and there's {{description}}. Humidity is at {{humidity}}%. Wind is moving {{wind.direction}} at {{wind.speed}} meters per second.</p>
+		<h2>{{description}} at {{temperature}}°{{units}}</h2>
+		<p>Humidity in {{name}} is {{humidity}}%. Wind is moving {{wind.direction}} at {{wind.speed}} meters per second.</p>
 		<form action="/" method="POST">
 			<input type="text" name="location">
 			<input type="submit" value="Get Weather">

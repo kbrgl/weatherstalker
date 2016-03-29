@@ -14,6 +14,7 @@ get = (location, appid, units) ->
       json: true
     }, (error, response, body) ->
       reject("Failed to fetch weather: #{error.message}") if error
+      reject("Failed to fetch weather: error code #{body.cod}") if body.cod != 200
       if units
         if units == 'imperial'
           body.units = 'F'
@@ -26,7 +27,7 @@ get = (location, appid, units) ->
 distill = (res) ->
   {
     temperature: res.main.temp,
-    description: res.weather[0].description
+    description: res.weather[0].main
     humidity: res.main.humidity
     visibility: res.visibility
     pressure: res.main.pressure
